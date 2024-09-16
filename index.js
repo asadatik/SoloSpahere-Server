@@ -75,9 +75,9 @@ async function run() {
 
     // update a job in db
     app.put('/job/:id', async (req, res) => {
-      const id = req.params.id
+      const filter = req.params.id
       const jobData = req.body
-      const query = { _id: new ObjectId(id) }
+      const query = { _id: new ObjectId(filter) }
       const options = { upsert: true }
       const updateDoc = {
         $set: {
